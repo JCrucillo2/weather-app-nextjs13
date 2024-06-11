@@ -43,13 +43,13 @@ export default function Home() {
 	};
 
 	return (
-		<div className="bg-app-background bg-cover bg-center min-h-screen overflow-hidden">
-			<div className="p-4 max-w-[48rem] mx-auto backdrop-brightness-50 min-h-screen">
+		<div className={`bg-app-background bg-cover bg-center min-h-screen overflow-hidden ${styles.defaultFlexMid}`}>
+			<div className="p-4 max-w-[48rem] mx-auto backdrop-brightness-50 m-4 rounded-md">
 				<h1 className="text-white text-4xl text-center my-4 font-bold">Weather.Zone</h1>
 				<input type="text" name="searchbar" className="w-full rounded-md mb-8" onKeyPress={searchLocation} value={location} onChange={handleLocation} placeholder="Enter a location" />
 				{weatherData.main || weatherData.weather || weatherData.wind ? (
 					<AnimatePresence>
-						<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-white md:flex justify-between">
+						<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-white">
 							<div>
 								<h2 className="text-4xl font-bold mb-4">{weatherData.name}</h2>
 								<p className="text-6xl">{weatherData.main.temp} &deg;C</p>
